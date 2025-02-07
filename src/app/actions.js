@@ -13,7 +13,7 @@ export async function submitWaitlistEntry(prevState, formData) {
   }
 
   try {
-    const response = await fetch(process.env.API_URL, {
+    const response = await fetch("https://a4b0ayr1v1.execute-api.us-east-1.amazonaws.com/storeWaitlist", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

@@ -8,7 +8,7 @@ export default function Home() {
       <div className="max-w-md w-full relative z-10">
         <div className="text-center mb-8">
           <h1 className="text-5xl font-bold text-white mb-2 animate-fade-in-up">Playt</h1>
-          <p className="text-xl text-white opacity-80 animate-fade-in-up animation-delay-150">
+          <p className="text-xl text-white opacity-80 animate-fade-in-up-low-op animation-delay-150">
             AI-Powered Data Analytics & Supply Chain Optimization for Restaurants
           </p>
         </div>

@@ -10,6 +10,13 @@ export default function BackgroundParticles() {
     const ctx = canvas.getContext("2d")
     let animationFrameId
 
+    const resizeCanvas = () => {
+        canvas.width = window.innerWidth
+        canvas.height = window.innerHeight
+      }
+
+    resizeCanvas()
+
     const particles = []
     const particleCount = 150 // Increased particle count
 
@@ -58,11 +65,6 @@ export default function BackgroundParticles() {
       })
 
       animationFrameId = requestAnimationFrame(animate)
-    }
-
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth
-      canvas.height = window.innerHeight
     }
 
     resizeCanvas()

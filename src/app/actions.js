@@ -4,7 +4,7 @@ export async function submitWaitlistEntry(prevState, formData) {
   const email = formData.get("email")
 
   if (!email) {
-    return { success: false, message: "Please provide an email address." }
+    return { success: false, message: "Please provide an email." }
   }
 
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
@@ -21,21 +21,11 @@ export async function submitWaitlistEntry(prevState, formData) {
     })
 
     if (!response.ok) {
-      let errorMessage = "Failed to submit"
-      try {
-        const errorData = await response.json()
-        errorMessage = errorData.message || errorMessage
-      } catch (parseError) {
-        // Ignore if response body isn't valid JSON
-      }
-      console.error("API Error:", response.status, errorMessage)
-      throw new Error(errorMessage)
+      throw new Error("Failed to submit")
     }
 
     return { success: true, message: "Thank you for joining our waitlist!" }
   } catch (error) {
-    console.error("Submission Error:", error)
-    return { success: false, message: error.message || "An error occurred. Please try again later." }
+    return { success: false, message: "An error occurred. Please try again later." }
   }
 }
-

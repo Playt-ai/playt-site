@@ -33,7 +33,7 @@ export default function Home() {
             <Link href="#features" className="px-4 py-2 text-sm font-medium text-playt-purple hover:text-playt-purple/80 transition-colors">
               Learn More
             </Link>
-            <a href="#demo" className="bg-playt-purple hover:bg-playt-purple/90 text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5">
+            <a href="https://calendly.com/team-playt/30min" target="_blank" rel="noopener noreferrer" className="bg-playt-purple hover:bg-playt-purple/90 text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5">
               Book a Demo {/* Placeholder link */}
             </a>
           </div>
@@ -44,25 +44,28 @@ export default function Home() {
       <section id="hero" className={`h-[calc(100vh-96px)] px-8 sm:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-8 md:gap-12`}>
         <div className="md:w-2/3 text-center md:text-left -mt-12">
           <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-poppins text-gray-900 mb-10 leading-tight">
-            Smarter Data.<br />
-            Smoother Operations.<br />
-            For Restaurants.
+            <span className="block opacity-0 animate-fade-in-stagger" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
+              Smarter Data.
+            </span>
+            <span className="block opacity-0 animate-fade-in-stagger" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
+              Smoother Operations.
+            </span>
+            <span className="block opacity-0 animate-fade-in-stagger" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
+              For Restaurants.
+            </span>
           </h1>
-          {/* <p className="text-lg text-gray-600 mb-8">
-            Playt helps restaurants streamline operations, boost profits, and make data-driven decisions with ease.
-          </p> */}
-          <div className="space-x-4">
-            <a href="#demo" className="bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
-              Book a Demo {/* Placeholder link */}
+          <div className="space-x-4 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
+            <a href="https://calendly.com/team-playt/30min" target="_blank" rel="noopener noreferrer" className="bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
+              Book a Demo
             </a>
             <Link href="#features" className="bg-white text-playt-purple border border-playt-purple hover:bg-gray-50 font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
               Learn More
             </Link>
           </div>
         </div>
-        <div className="md:w-1/3 pr-0 md:pr-8 -mt-28">
+        <div className="md:w-1/3 pr-0 md:pr-8 -mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
           <Image
-            src="/product-preview.png"
+            src="/logo.png" // product-preview.png
             alt="Playt Dashboard Preview"
             width={600}
             height={450}
@@ -74,12 +77,12 @@ export default function Home() {
       {/* Features Section */}
       <section id="features" className={`py-16 md:py-24 bg-gray-50`}>
         <div className={containerClass}>
-          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-center text-gray-900 mb-12">
+          <h2 className="text-3xl md:text-4xl font-bold font-poppins text-center text-gray-900 mb-12 animate-slide-in-top">
             Features Designed for Your Restaurant
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* Feature 1 */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.2s' }}>
               <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-playt-yellow/20 text-playt-yellow">
                  {/* Replace with actual icon */}
                 <FaChartLine className="w-8 h-8 text-playt-purple" />
@@ -88,7 +91,7 @@ export default function Home() {
               <p className="text-gray-600">Track orders, revenue, and trends with real-time insights.</p>
             </div>
             {/* Feature 2 */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.4s' }}>
               <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-playt-yellow/20 text-playt-yellow">
                  {/* Replace with actual icon */}
                 <FaTruckLoading className="w-8 h-8 text-playt-purple" />
@@ -97,7 +100,7 @@ export default function Home() {
               <p className="text-gray-600">Automate and manage your inventory based on smart forecasts.</p>
             </div>
             {/* Feature 3 */}
-            <div className="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-1 hover:shadow-lg">
+            <div className="bg-white p-6 rounded-lg shadow-md text-center transition-transform transform hover:-translate-y-1 hover:shadow-lg animate-fade-in" style={{ animationDelay: '0.6s' }}>
               <div className="inline-flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-playt-yellow/20 text-playt-yellow">
                 {/* Replace with actual icon */}
                 <FaCalendarAlt className="w-8 h-8 text-playt-purple" />
@@ -177,8 +180,8 @@ export default function Home() {
            <div className="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-6 rounded-lg">
              {/* Ensure WaitlistForm button uses playt-yellow */}
           <WaitlistForm />
-           </div>
-         </div>
+        </div>
+      </div>
       </section>
 
       {/* Footer */}

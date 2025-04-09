@@ -29,15 +29,38 @@ module.exports = {
       // otherwise, you can remove the old ones like float, fadeInUp etc.
       // from globals.css later.
       keyframes: {
-         // ... potentially keep existing keyframes or add new ones ...
-         fadeInUp: { // Example: Keep fadeInUp if reused
-           'from': { opacity: 0, transform: 'translateY(20px)' },
-           'to': { opacity: 1, transform: 'translateY(0)' },
-         }
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' }
+        },
+        slideInFromLeft: {
+          '0%': { transform: 'translateX(-100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' }
+        },
+        slideInFromRight: {
+          '0%': { transform: 'translateX(100%)', opacity: '0' },
+          '100%': { transform: 'translateX(0)', opacity: '1' }
+        },
+        slideInFromTop: {
+          '0%': { transform: 'translateY(-100%)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' }
+        },
+        bounce: {
+          '0%, 100%': { transform: 'translateY(-5%)' },
+          '50%': { transform: 'translateY(0)' }
+        },
+        fadeInStagger: {
+          '0%': { opacity: '0', transform: 'translateY(10px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' }
+        }
       },
       animation: {
-         // ... potentially keep existing animations or add new ones ...
-         'fade-in-up': 'fadeInUp 0.6s ease-out forwards', // Example
+        'fade-in': 'fadeIn 0.5s ease-out',
+        'slide-in-left': 'slideInFromLeft 0.5s ease-out',
+        'slide-in-right': 'slideInFromRight 0.5s ease-out',
+        'slide-in-top': 'slideInFromTop 0.5s ease-out',
+        'float': 'bounce 3s ease-in-out infinite',
+        'fade-in-stagger': 'fadeInStagger 0.5s ease-out forwards'
       }
     },
   },

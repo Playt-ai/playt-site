@@ -22,6 +22,7 @@ export async function submitWaitlistEntry(prevState, formData) {
 
   try {
     const waitlistUrl = getEnvVariable('WAITLIST_URL');
+    console.log(waitlistUrl);
     
     if (!waitlistUrl) {
       throw new Error("Waitlist URL not configured");

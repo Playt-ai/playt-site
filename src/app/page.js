@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import Header from "./components/Header"
 import WaitlistForm from "./components/WaitlistForm"
 
 // Import icons (example using react-icons, install it first: npm install react-icons)
@@ -13,32 +14,7 @@ export default function Home() {
   return (
     // Use light background, set default text color
     <main className="min-h-screen bg-white text-gray-800">
-      {/* Header */}
-      <header className="sticky top-0 z-50 bg-white shadow-md">
-        <nav className={`${containerClass} flex items-center justify-between py-4`}>
-          <Link href="/" className="flex items-center gap-4">
-            <Image
-              src="/logo.png"
-              alt="Playt Logo"
-              width={64}
-              height={64}
-              priority
-            />
-            <span className="font-poppins font-bold text-4xl text-gray-800">
-              Playt
-            </span>
-          </Link>
-          <div className="space-x-2">
-            {/* Use Link for internal navigation, anchor for external/demo links */}
-            <Link href="#features" className="px-4 py-2 text-sm font-medium text-playt-purple hover:text-playt-purple/80 transition-colors">
-              Learn More
-            </Link>
-            <a href="https://calendly.com/team-playt/30min" target="_blank" rel="noopener noreferrer" className="bg-playt-purple hover:bg-playt-purple/90 text-white text-sm font-medium px-4 py-2 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5">
-              Book a Demo {/* Placeholder link */}
-            </a>
-          </div>
-        </nav>
-      </header>
+      <Header />
 
       {/* Hero Section */}
       <section id="hero" className={`h-[calc(100vh-96px)] px-8 sm:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-8 md:gap-12`}>
@@ -197,6 +173,7 @@ export default function Home() {
             <div className="flex space-x-6 mb-6 md:mb-0">
               {/* <Link href="/about" className="hover:text-white transition-colors">About</Link> */}
               <Link href="mailto:team@playt.ai" className="hover:text-white transition-colors">Contact</Link>
+              <Link href="/team" className="hover:text-white transition-colors">Our Team</Link>
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             </div>

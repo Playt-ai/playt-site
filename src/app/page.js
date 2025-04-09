@@ -65,7 +65,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/3 pr-0 md:pr-8 -mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
           <Image
-            src="/product-preview.png" // product-preview.png
+            src="/wazowski.png" // product-preview.png
             alt="Playt Dashboard Preview"
             width={600}
             height={450}

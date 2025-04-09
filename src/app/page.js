@@ -65,7 +65,7 @@ export default function Home() {
         </div>
         <div className="md:w-1/3 pr-0 md:pr-8 -mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
           <Image
-            src="/logo.png" // product-preview.png
+            src="/product-preview.png" // product-preview.png
             alt="Playt Dashboard Preview"
             width={600}
             height={450}
@@ -195,8 +195,8 @@ export default function Home() {
               <p className="text-sm mt-2">&copy; {new Date().getFullYear()} Playt. All rights reserved.</p>
             </div>
             <div className="flex space-x-6 mb-6 md:mb-0">
-              <Link href="/about" className="hover:text-white transition-colors">About</Link>
-              <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+              {/* <Link href="/about" className="hover:text-white transition-colors">About</Link> */}
+              <Link href="mailto:team@playt.ai" className="hover:text-white transition-colors">Contact</Link>
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
             </div>

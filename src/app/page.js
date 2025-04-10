@@ -34,9 +34,9 @@ export default function Home() {
             <a href="https://calendly.com/team-playt/30min" target="_blank" rel="noopener noreferrer" className="bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
               Book a Demo
             </a>
-            <Link href="#features" className="bg-white text-playt-purple border border-playt-purple hover:bg-gray-50 font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
+            {/* <Link href="#features" className="bg-white text-playt-purple border border-playt-purple hover:bg-gray-50 font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
               Learn More
-            </Link>
+            </Link> */}
           </div>
         </div>
         <div className="md:w-1/3 pr-0 md:pr-8 -mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>

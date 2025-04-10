@@ -8,36 +8,36 @@ export default function Team() {
     {
       name: "Edison Shen",
       role: "Co-Founder & CEO",
-      image: "/team/wazowski.png", // Replace with actual image
+      image: "/team/edison.png", // Replace with actual image
       linkedin: "https://www.linkedin.com/in/edison-shen7/", // Replace with actual LinkedIn URL
       description: "CS @ Michigan"
     },
     {
       name: "Jonathan Jae",
       role: "Co-Founder & CFO",
-      image: "/team/wazowski.png", // Replace with actual image
-      linkedin: "#", // Replace with actual LinkedIn URL
+      image: "/team/jonathan.png", // Replace with actual image
+      linkedin: "https://www.linkedin.com/in/jonathan-jae1/", // Replace with actual LinkedIn URL
       description: "Finance @ Stanford"
     },
     {
       name: "Jackson Shen",
       role: "Software Engineer",
-      image: "/team/wazowski.png", // Replace with actual image
-      linkedin: "#", // Replace with actual LinkedIn URL
+      image: "/team/jackson.png", // Replace with actual image
+      linkedin: "https://www.linkedin.com/in/jackson-shen/", // Replace with actual LinkedIn URL
       description: "AI PhD @ Purdue"
     },
     {
       name: "Edward Sun",
       role: "Software Engineer",
-      image: "/team/wazowski.png", // Replace with actual image
-      linkedin: "#", // Replace with actual LinkedIn URL
+      image: "/team/edward.png", // Replace with actual image
+      linkedin: "https://www.linkedin.com/in/edward-sun-208b73203/", // Replace with actual LinkedIn URL
       description: "CS @ UCLA"
     },
     {
       name: "Cassandra Orr",
       role: "Product Design",
-      image: "/team/wazowski.png", // Replace with actual image
-      linkedin: "#", // Replace with actual LinkedIn URL
+      image: "/team/cassandra.png", // Replace with actual image
+      linkedin: "https://www.linkedin.com/in/cassandra-orr-2a65132b1/", // Replace with actual LinkedIn URL
       description: "CogSci @ UC Berkeley"
     }
   ];

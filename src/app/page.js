@@ -39,11 +39,11 @@ export default function Home() {
         </div>
         <div className="md:w-1/3 pr-0 md:pr-8 mt-4 md:-mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
           <Image
-            src="/wazowski.png"
+            src="/product-preview.png"
             alt="Playt Dashboard Preview"
-            width={600}
-            height={450}
-            className="rounded-lg shadow-xl mx-auto w-full max-w-[300px] md:max-w-none"
+            width={1000}
+            height={800}
+            className="rounded-lg mx-auto w-full max-w-[300px] md:max-w-none"
             priority
           />
         </div>

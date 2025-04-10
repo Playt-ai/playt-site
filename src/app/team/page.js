@@ -10,35 +10,35 @@ export default function Team() {
       role: "Co-Founder & CEO",
       image: "/team/edison.png", // Replace with actual image
       linkedin: "https://www.linkedin.com/in/edison-shen7/", // Replace with actual LinkedIn URL
-      description: "CS @ Michigan"
+      description: "Computer Science @ Michigan"
     },
     {
       name: "Jonathan Jae",
       role: "Co-Founder & CFO",
       image: "/team/jonathan.png", // Replace with actual image
       linkedin: "https://www.linkedin.com/in/jonathan-jae1/", // Replace with actual LinkedIn URL
-      description: "Finance @ Stanford"
+      description: "Financial Mathematics @ Stanford"
     },
     {
       name: "Jackson Shen",
-      role: "Software Engineer",
+      role: "ML Engineer",
       image: "/team/jackson.png", // Replace with actual image
       linkedin: "https://www.linkedin.com/in/jackson-shen/", // Replace with actual LinkedIn URL
-      description: "AI PhD @ Purdue"
+      description: "AI/ML Ph.D. @ Purdue"
     },
     {
       name: "Edward Sun",
-      role: "Software Engineer",
+      role: "ML Engineer",
       image: "/team/edward.png", // Replace with actual image
       linkedin: "https://www.linkedin.com/in/edward-sun-208b73203/", // Replace with actual LinkedIn URL
-      description: "CS @ UCLA"
+      description: "Computer Science @ UCLA"
     },
     {
       name: "Cassandra Orr",
       role: "Product Design",
       image: "/team/cassandra.png", // Replace with actual image
       linkedin: "https://www.linkedin.com/in/cassandra-orr-2a65132b1/", // Replace with actual LinkedIn URL
-      description: "CogSci @ UC Berkeley"
+      description: "Cognitive Science @ UC Berkeley"
     }
   ];
 

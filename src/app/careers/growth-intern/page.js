@@ -40,7 +40,7 @@ export default function GrowthIntern() {
               <li>Strong interest in startups, entrepreneurship, and early-stage growth</li>
               <li>Excellent written and verbal communication skills</li>
               <li>Willingness to grow with the team and take on new responsibilities</li>
-              <li>Ability to work indepndent and remotely</li>
+              <li>Ability to work independently and remotely</li>
             </ul>
 
             <h2 className="text-2xl font-bold font-poppins text-gray-900 mt-12 mb-4">Benefits</h2>

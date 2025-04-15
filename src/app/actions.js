@@ -89,7 +89,7 @@ export async function submitApplication(formData) {
     const buffer = await resume.arrayBuffer();
     const base64Resume = Buffer.from(buffer).toString('base64');
 
-    // Create email content
+    // Create email content for team
     const mailOptions = {
       from: smtpUser,
       to: recipientEmail,
@@ -114,10 +114,40 @@ Resume attached.
       ]
     };
 
-    // Send email
-    await transporter.sendMail(mailOptions);
+    // Create confirmation email content for applicant
+    const confirmationMailOptions = {
+      from: recipientEmail,
+      to: email,
+      subject: 'Thank You for Applying to Playt',
+      html: `
+        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px; color: #333;">
+          <div style="text-align: center; margin-bottom: 20px;">
+            <img src="https://playt.ai/logo.png" alt="Playt Logo" style="width: 120px;">
+          </div>
+          
+          <h1 style="color: #6C63FF; font-size: 24px; margin-bottom: 20px;">Application Received!</h1>
+          
+          <p>Hello ${name},</p>
+          
+          <p>Thank you for applying to Playt. We've received your application and resume. Our team will review your application and reach out if there's a good fit.</p>
+        </div>
+      `,
+      text: `
+Thank You for Applying to Playt
 
-    return { success: true, message: 'Application submitted successfully!' };
+Hello ${name},
+
+Thank you for applying to Playt. We've received your application and resume. Our team will review your application and reach out if there's a good fit.
+      `
+    };
+
+    // Send application email to team
+    await transporter.sendMail(mailOptions);
+    
+    // Send confirmation email to applicant
+    await transporter.sendMail(confirmationMailOptions);
+
+    return { success: true, message: 'Application submitted successfully! Check your email for confirmation.' };
   } catch (error) {
     console.error('Application submission error:', error);
     return { 

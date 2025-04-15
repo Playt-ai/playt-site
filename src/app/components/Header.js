@@ -19,7 +19,7 @@ export default function Header() {
             Playt
           </span>
         </Link>
-        <div className="flex items-center space-x-6">
+        <div className="flex items-center space-x-4">
           <div className="hidden md:flex space-x-6">
             <Link href="/team" className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors">
               Our Team
@@ -28,6 +28,7 @@ export default function Header() {
               Careers
             </Link>
           </div>
+          
           <a 
             href="https://calendly.com/team-playt/30min" 
             target="_blank" 
@@ -36,6 +37,12 @@ export default function Header() {
           >
             Book a Demo
           </a>
+          <Link 
+            href="/login" 
+            className="bg-playt-purple hover:bg-playt-purple/90 text-white border hover:shadow-lg transform hover:-translate-y-0.5 text-sm font-medium px-4 py-2 rounded-lg transition-colors"
+          >
+            Log In
+          </Link>
         </div>
       </nav>
     </header>

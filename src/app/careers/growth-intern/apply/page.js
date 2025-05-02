@@ -6,11 +6,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { submitApplication } from '../../../actions';
 
-export const metadata = {
-  title: 'Apply for Growth Intern Position',
-  description: 'Submit your application for the Growth Intern position at Playt.',
-};
-
 export default function Apply() {
   const [submitting, setSubmitting] = useState(false);
   const [status, setStatus] = useState({ message: '', success: false });

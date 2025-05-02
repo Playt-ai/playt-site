@@ -7,6 +7,11 @@ import WaitlistForm from "./components/WaitlistForm"
 // You can replace these with your preferred icon solution (SVG imports, etc.)
 import { FaChartLine, FaTruckLoading, FaCalendarAlt, FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 
+export const metadata = {
+  title: 'Playt | Restaurant Analytics and Operations Platform',
+  description: 'Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.',
+};
+
 export default function Home() {
   // Define base container class for consistent padding/max-width
   const containerClass = "container mx-auto px-4 sm:px-6 lg:px-8";

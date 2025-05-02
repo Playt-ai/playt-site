@@ -2,6 +2,11 @@ import Image from 'next/image';
 import Header from '../components/Header';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Careers',
+  description: 'Join the Playt team and help transform the future of restaurant operations. View our open positions and apply today.',
+};
+
 export default function Careers() {
   const positions = [
     {

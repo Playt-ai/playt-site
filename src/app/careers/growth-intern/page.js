@@ -2,6 +2,11 @@ import Image from 'next/image';
 import Header from '@/app/components/Header';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Growth Intern Position',
+  description: 'Join Playt as a Growth Intern and help shape the future of restaurant operations technology.',
+};
+
 export default function GrowthIntern() {
   return (
     <main className="min-h-screen bg-white text-gray-800">

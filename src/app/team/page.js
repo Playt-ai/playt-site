@@ -3,6 +3,11 @@ import Header from '../components/Header';
 import Link from 'next/link';
 import { FaLinkedinIn } from 'react-icons/fa';
 
+export const metadata = {
+  title: 'Our Team',
+  description: 'Meet the passionate team behind Playt, working to revolutionize restaurant operations and analytics.',
+};
+
 export default function Team() {
   const team = [
     {

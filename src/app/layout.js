@@ -9,15 +9,61 @@ const inter = Inter({
 
 const poppins = Poppins({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700"],
   variable: '--font-poppins',
   display: 'swap',
 })
 
 export const metadata = {
-  title: "Playt - Smarter Data. Smoother Operations. For Restaurants.",
-  description:
-    "Playt provides AI-powered data analytics, supply chain optimization, and management tools to help restaurants streamline operations and boost profits.",
+  metadataBase: new URL('https://playt.ai'),
+  title: {
+    default: 'Playt | Restaurant Analytics and Operations Platform',
+    template: '%s | Playt'
+  },
+  description: "Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.",
+  keywords: ['restaurant analytics', 'restaurant operations', 'restaurant management', 'restaurant data', 'restaurant technology', 'restaurant software'],
+  authors: [{ name: 'Playt' }],
+  openGraph: {
+    title: 'Playt | Restaurant Analytics and Operations Platform',
+    description: "Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.",
+    url: 'https://playt.ai',
+    siteName: 'Playt',
+    images: [
+      {
+        url: '/og-image.png', // Make sure to add this image to your public folder
+        width: 1200,
+        height: 630,
+        alt: 'Playt Platform Preview',
+      },
+    ],
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Playt | Restaurant Analytics and Operations Platform',
+    description: "Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.",
+    images: ['/og-image.png'],
+  },
+  icons: {
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png',
+    apple: '/apple-touch-icon.png',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-verification-code', // Add your Google verification code
+  },
 }
 
 export default function RootLayout({ children }) {

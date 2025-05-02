@@ -2,6 +2,11 @@ import Image from 'next/image';
 import Header from '../components/Header';
 import Link from 'next/link';
 
+export const metadata = {
+  title: 'Privacy Policy',
+  description: 'Learn about how Playt collects, uses, and protects your personal information.',
+};
+
 export default function Privacy() {
   return (
     <main className="min-h-screen bg-white text-gray-800">

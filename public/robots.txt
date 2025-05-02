@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Disallow application form from being indexed
+Disallow: /careers/*/apply
+
+# Sitemap
+Sitemap: https://playt.ai/sitemap.xml 

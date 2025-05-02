@@ -72,7 +72,7 @@ export async function submitWaitlistEntry(prevState, formData) {
           <p>We're excited to have you on board. You'll be among the first to know when we launch and get early access to our platform.</p>
           <p>In the meantime, feel free to:</p>
           <ul>
-            <li>Follow our journey on <a href="https://linkedin.com/company/playt-ai" style="color: #6C63FF;">LinkedIn</a></li>
+            <li>Follow our journey on <a href="https://www.linkedin.com/company/playtai" style="color: #6C63FF;">LinkedIn</a></li>
             <li>Learn more about our team at <a href="https://playt.ai/team" style="color: #6C63FF;">playt.ai/team</a></li>
           </ul>
           <p>If you have any questions, just reply to this email.</p>

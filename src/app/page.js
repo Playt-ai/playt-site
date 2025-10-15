@@ -35,11 +35,15 @@ export default function Home() {
               For Restaurants.
             </span>
           </h1>
-          <div className="space-y-4 sm:space-y-0 sm:space-x-4 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
             <a href="https://calendly.com/team-playt/30min" target="_blank" rel="noopener noreferrer" 
-               className="inline-block w-full sm:w-auto bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg mb-4 sm:mb-0">
+               className="inline-block w-full sm:w-auto bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
               Book a Demo
             </a>
+            <Link href="/register"
+               className="inline-block w-full sm:w-auto bg-white hover:bg-gray-50 text-playt-purple border-2 border-playt-purple font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
+              Get Started
+            </Link>
           </div>
         </div>
         <div className="md:w-1/3 pr-0 md:pr-8 mt-4 md:-mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
@@ -343,6 +347,7 @@ export default function Home() {
               <Link href="/team" className="hover:text-white transition-colors">Our Team</Link>
               <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
               <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
+              <Link href="/eula" className="hover:text-white transition-colors">EULA</Link>
             </div>
             <div className="flex space-x-5">
               <a href="#" aria-label="Twitter" className="hover:text-playt-purple transition-colors"><FaTwitter className="w-5 h-5" /></a>

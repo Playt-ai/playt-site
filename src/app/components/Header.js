@@ -21,12 +21,21 @@ export default function Header() {
         </Link>
         <div className="flex items-center space-x-6">
           <div className="hidden md:flex space-x-6">
+          <Link href="/pricing" className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors">
+              Pricing
+            </Link>
             <Link href="/team" className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors">
-              Our Team
+              About
             </Link>
             <Link href="/careers" className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors">
               Careers
             </Link>
+            <a 
+              href="https://app.playt.ai/login"
+              className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors"
+            >
+              Login
+            </a>
           </div>
           <a 
             href="https://calendly.com/team-playt/30min" 

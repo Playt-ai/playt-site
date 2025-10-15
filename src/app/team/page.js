@@ -13,36 +13,36 @@ export default function Team() {
     {
       name: "Edison Shen",
       role: "Co-Founder & CEO",
-      image: "/team/edison.png", // Replace with actual image
-      linkedin: "https://www.linkedin.com/in/edison-shen7/", // Replace with actual LinkedIn URL
+      image: "/team/edison.png",
+      linkedin: "https://www.linkedin.com/in/edison-shen7/",
       description: "Computer Science @ Michigan"
     },
     {
       name: "Jonathan Jae",
       role: "Co-Founder & CFO",
-      image: "/team/jonathan.png", // Replace with actual image
-      linkedin: "https://www.linkedin.com/in/jonathan-jae1/", // Replace with actual LinkedIn URL
+      image: "/team/jonathan.png",
+      linkedin: "https://www.linkedin.com/in/jonathan-jae1/",
       description: "Financial Mathematics @ Stanford"
     },
     {
       name: "Jackson Shen",
       role: "ML Engineer",
-      image: "/team/jackson.png", // Replace with actual image
-      linkedin: "https://www.linkedin.com/in/jackson-shen/", // Replace with actual LinkedIn URL
+      image: "/team/jackson.png",
+      linkedin: "https://www.linkedin.com/in/jackson-shen/",
       description: "AI/ML Ph.D. @ Purdue"
     },
     {
       name: "Edward Sun",
       role: "ML Engineer",
-      image: "/team/edward.png", // Replace with actual image
-      linkedin: "https://www.linkedin.com/in/edward-sun-208b73203/", // Replace with actual LinkedIn URL
+      image: "/team/edward.png",
+      linkedin: "https://www.linkedin.com/in/edward-sun-208b73203/",
       description: "Computer Science @ UCLA"
     },
     {
       name: "Cassandra Orr",
       role: "Product Design",
-      image: "/team/cassandra.png", // Replace with actual image
-      linkedin: "https://www.linkedin.com/in/cassandra-orr-2a65132b1/", // Replace with actual LinkedIn URL
+      image: "/team/cassandra.png",
+      linkedin: "https://www.linkedin.com/in/cassandra-orr-2a65132b1/",
       description: "Cognitive Science @ UC Berkeley"
     }
   ];
@@ -55,10 +55,31 @@ export default function Team() {
       {/* Page Content */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <h1 className="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-4 text-center">Meet Our Team</h1>
-          {/* <p className="text-lg text-gray-600 mb-16 max-w-3xl mx-auto text-center">
-            We're a team of entrepreneurs, engineers, and industry experts passionate about transforming restaurant operations through data-driven solutions.
-          </p> */}
+          <h1 className="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-4 text-center">About Us</h1>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-bold font-poppins text-playt-purple mb-2">Our Team</h3>
+              <p className="text-gray-600">
+                We're bringing engineering experience from companies like Microsoft, Waymo, Amazon, and various startups to the restaurant industry.
+                With double-digit papers published in machine learning and AI, we're ready to transform how data is used.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-bold font-poppins text-playt-purple mb-2">Our Mission</h3>
+              <p className="text-gray-600">
+                We believe your time is valuable and should be spent on cooking and improving the customer experience.
+                That's why we're building seamless, plug-and-play AI solutions to manage your operations, staffing, and supply chain for you.
+              </p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-6">
+              <h3 className="text-xl font-bold font-poppins text-playt-purple mb-2">Core Values</h3>
+              <p className="text-gray-600">
+                We believe in giving our customers the best experience possible.
+                We're always looking to make our product better and we take into account every bit of feedback we get.
+                Tell us about a new feature you'd like to see in the morning, and we'll have it in your app by the afternoon.
+              </p>
+            </div>
+          </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member) => (

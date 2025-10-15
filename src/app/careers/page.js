@@ -9,13 +9,13 @@ export const metadata = {
 
 export default function Careers() {
   const positions = [
-    {
-      title: "Growth Intern",
-      type: "Internship",
-      location: "Remote",
-      description: "Help drive Playt's growth through marketing and business development initiatives.",
-      link: "/careers/growth-intern"
-    }
+    // {
+    //   title: "Growth Intern",
+    //   type: "Internship",
+    //   location: "Remote",
+    //   description: "Help drive Playt's growth through marketing and business development initiatives.",
+    //   link: "/careers/growth-intern"
+    // }
   ];
 
   return (
@@ -27,7 +27,7 @@ export default function Careers() {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <h1 className="text-4xl md:text-5xl font-bold font-poppins text-gray-900 mb-8">Join Our Team</h1>
           <p className="text-lg text-gray-600 mb-12 max-w-3xl">
-            Join our quickly growing team!
+            Check back soon for our open positions!
           </p>
           
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

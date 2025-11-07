@@ -30,12 +30,6 @@ export default function Header() {
             <Link href="/careers" className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors">
               Careers
             </Link>
-            <a 
-              href="https://app.playt.ai/login"
-              className="text-sm font-medium text-gray-600 hover:text-playt-purple transition-colors"
-            >
-              Login
-            </a>
           </div>
           <a 
             href="https://calendly.com/team-playt/30min" 

@@ -40,10 +40,6 @@ export default function Home() {
                className="inline-block w-full sm:w-auto bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
               Book a Demo
             </a>
-            <Link href="/register"
-               className="inline-block w-full sm:w-auto bg-white hover:bg-gray-50 text-playt-purple border-2 border-playt-purple font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
-              Get Started
-            </Link>
           </div>
         </div>
         <div className="md:w-1/3 pr-0 md:pr-8 mt-4 md:-mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>

@@ -1,359 +1,374 @@
-import Image from 'next/image';
+'use client';
+
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import Link from 'next/link';
-import Header from "./components/Header"
-import WaitlistForm from "./components/WaitlistForm"
-
-// Import icons (example using react-icons, install it first: npm install react-icons)
-// You can replace these with your preferred icon solution (SVG imports, etc.)
-import { FaChartLine, FaTruckLoading, FaCalendarAlt, FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
-
-export const metadata = {
-  title: 'Playt | Restaurant Analytics and Operations Platform',
-  description: 'Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.',
-};
+import Header from './components/Header';
+import Footer from './components/layout/Footer';
+import WaitlistForm from './components/WaitlistForm';
+import AnimatedSection from './components/animations/AnimatedSection';
+import StaggerChildren, { StaggerItem } from './components/animations/StaggerChildren';
+import InventoryDashboardMockup from './components/mockups/InventoryDashboardMockup';
+import BuildOrdersMockup from './components/mockups/BuildOrdersMockup';
+import VendorChoiceMockup from './components/mockups/VendorChoiceMockup';
+import { FaChartLine, FaBrain, FaBoxes, FaTruck, FaArrowRight } from 'react-icons/fa';
 
 export default function Home() {
-  // Define base container class for consistent padding/max-width
-  const containerClass = "container mx-auto px-4 sm:px-6 lg:px-8";
-
   return (
-    // Use light background, set default text color
-    <main className="min-h-screen bg-white text-gray-800">
+    <main className="min-h-screen bg-white text-gray-900 overflow-x-hidden">
       <Header />
-
-      {/* Hero Section */}
-      <section id="hero" className={`h-[calc(100vh-96px)] px-4 sm:px-12 lg:px-16 flex flex-col md:flex-row items-center gap-8 md:gap-12`}>
-        <div className="md:w-2/3 text-center md:text-left mt-8 md:-mt-12">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold font-poppins text-gray-900 mb-8 md:mb-10 leading-tight">
-            <span className="block opacity-0 animate-fade-in-stagger" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-              Smarter Data.
-            </span>
-            <span className="block opacity-0 animate-fade-in-stagger" style={{ animationDelay: '0.7s', animationFillMode: 'forwards' }}>
-              Smoother Operations.
-            </span>
-            <span className="block opacity-0 animate-fade-in-stagger" style={{ animationDelay: '1.2s', animationFillMode: 'forwards' }}>
-              For Restaurants.
-            </span>
-          </h1>
-          <div className="flex flex-col sm:flex-row gap-4 sm:gap-4 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
-            <a href="https://calendly.com/team-playt/30min" target="_blank" rel="noopener noreferrer" 
-               className="inline-block w-full sm:w-auto bg-playt-purple hover:bg-playt-purple/90 text-white font-medium px-8 py-4 rounded-lg shadow transition-all hover:shadow-lg transform hover:-translate-y-0.5 text-lg">
-              Book a Demo
-            </a>
-          </div>
-        </div>
-        <div className="md:w-1/3 pr-0 md:pr-8 mt-4 md:-mt-28 opacity-0 animate-fade-in" style={{ animationDelay: '1.7s', animationFillMode: 'forwards' }}>
-          <Image
-            src="/product-preview.png"
-            alt="Playt Dashboard Preview"
-            width={1000}
-            height={800}
-            className="rounded-lg mx-auto w-full max-w-[300px] md:max-w-none"
-            priority
-          />
-        </div>
-      </section>
-
-      {/* AI Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-12 lg:px-16 bg-gray-50">
-        <div className={`${containerClass} flex flex-col md:flex-row items-center gap-12 md:gap-16`}>
-          {/* Left side - Chat Animation */}
-          <div className="md:w-1/2">
-            <div className="bg-white rounded-xl shadow-lg p-4 max-w-[400px] mx-auto">
-              {/* Chat Header */}
-              <div className="flex items-center space-x-2 mb-4 pb-3 border-b">
-                <div className="w-5 h-5 rounded-full bg-playt-purple flex items-center justify-center">
-                  <svg className="w-3 h-3 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
-                  </svg>
-                </div>
-                <span className="font-medium">AI Assistant</span>
-              </div>
-
-              {/* Chat Messages */}
-              <div className="space-y-4">
-                {/* User Message */}
-                <div className="flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
-                  <div className="bg-playt-purple text-white p-3 rounded-2xl rounded-tr-none max-w-[75%]">
-                    How's my restaurant performing this week?
-                  </div>
-                </div>
-
-                {/* AI Response */}
-                <div className="flex justify-start opacity-0 animate-fade-in" style={{ animationDelay: '2s', animationFillMode: 'forwards' }}>
-                  <div className="bg-gray-100 p-3 rounded-2xl rounded-tl-none max-w-[75%]">
-                    Your revenue is up 15% compared to last week, with a notable increase in dinner orders. I've noticed your pasta dishes are trending particularly well!
-                  </div>
-                </div>
-
-                {/* Second User Message */}
-                <div className="flex justify-end opacity-0 animate-fade-in" style={{ animationDelay: '3s', animationFillMode: 'forwards' }}>
-                  <div className="bg-playt-purple text-white p-3 rounded-2xl rounded-tr-none max-w-[75%]">
-                    What should I order for next week?
-                  </div>
-                </div>
-
-                {/* Second AI Response */}
-                <div className="flex justify-start opacity-0 animate-fade-in" style={{ animationDelay: '4s', animationFillMode: 'forwards' }}>
-                  <div className="bg-gray-100 p-3 rounded-2xl rounded-tl-none max-w-[75%]">
-                    Based on your trends and upcoming weather forecast, I recommend increasing pasta ingredients by 20% and preparing for higher dine-in traffic.
-                  </div>
-                </div>
-              </div>
-
-              {/* Chat Input */}
-              <div className="mt-4 pt-3 border-t flex space-x-2 opacity-0 animate-fade-in" style={{ animationDelay: '4.5s', animationFillMode: 'forwards' }}>
-                <input
-                  type="text"
-                  placeholder="Ask me anything..."
-                  className="flex-1 px-4 py-2 border border-gray-300 rounded-lg text-sm"
-                  disabled
-                />
-                <button className="bg-playt-purple text-white p-2 rounded-lg">
-                  <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-          </div>
-
-          {/* Left side - Text */}
-          <div className="md:w-1/2">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins text-gray-900 leading-tight">
-              <span className="block mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-                Bringing AI
-              </span>
-              <span className="block mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-                to restaurants.
-              </span>
-              <span className="block text-playt-purple opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-                Smarter than ever.
-              </span>
-            </h2>
-          </div>
-          
-        </div>
-      </section>
-
-      {/* Supply Management Section */}
-      <section className="py-16 md:py-24 px-4 sm:px-12 lg:px-16 bg-white">
-        <div className={`${containerClass} flex flex-col md:flex-row items-center gap-12 md:gap-16`}>
-          {/* Left side - Text */}
-          <div className="md:w-1/2">
-            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold font-poppins text-gray-900 leading-tight">
-              <span className="block mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '0.2s', animationFillMode: 'forwards' }}>
-                We handle
-              </span>
-              <span className="block mb-2 opacity-0 animate-fade-in" style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}>
-                your supply.
-              </span>
-              <span className="block text-playt-purple opacity-0 animate-fade-in" style={{ animationDelay: '0.6s', animationFillMode: 'forwards' }}>
-                You just worry about cooking.
-              </span>
-            </h2>
-          </div>
-
-          {/* Right side - Calendar and Suggestion Animation */}
-          <div className="md:w-1/2">
-            <div className="bg-white rounded-xl shadow-lg p-4 max-w-[450px] mx-auto">
-              {/* Order Suggestion */}
-              <div className="mb-4 opacity-0 animate-fade-in" style={{ animationDelay: '1s', animationFillMode: 'forwards' }}>
-                <div className="border border-amber-100 bg-amber-50 rounded-lg p-4">
-                  <div className="flex items-start">
-                    <div className="bg-white rounded-lg p-2 flex items-center justify-center mr-3 text-amber-500 border border-amber-200">
-                      <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
-                      </svg>
-                    </div>
-                    <div>
-                      <h4 className="font-medium text-gray-900">Order More Tomatoes</h4>
-                      <p className="text-sm text-gray-600">Usage trending 20% higher this week</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Mini Chart */}
-              <div className="opacity-0 animate-fade-in" style={{ animationDelay: '1.5s', animationFillMode: 'forwards' }}>
-                <div className="bg-white rounded-lg p-4">
-                  <div className="flex items-center justify-between mb-3">
-                    <div className="text-sm font-medium text-gray-900">Tomato Soup</div>
-                    <div className="flex items-center gap-4">
-                      {/* Legend */}
-                      <div className="flex items-center gap-3 text-xs">
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-2 h-2 rounded-full bg-[#9747FF]"></div>
-                          <span className="text-gray-600">Actual</span>
-                        </div>
-                        <div className="flex items-center gap-1.5">
-                          <div className="w-2 h-2 rounded-full bg-[#3a36db]"></div>
-                          <span className="text-gray-600">Predicted</span>
-                        </div>
-                      </div>
-                      <div className="text-xs text-gray-500">Last 7 days</div>
-                    </div>
-                  </div>
-                  
-                  {/* SVG Chart */}
-                  <div className="h-[100px] relative">
-                    <svg className="w-full h-full" viewBox="0 0 400 100" preserveAspectRatio="none">
-                      {/* Gradient for area */}
-                      <defs>
-                        <linearGradient id="areaGradient" x1="0" x2="0" y1="0" y2="1">
-                          <stop offset="0%" stopColor="#9747FF" stopOpacity="0.2" />
-                          <stop offset="100%" stopColor="#9747FF" stopOpacity="0.0" />
-                        </linearGradient>
-                      </defs>
-
-                      {/* Grid lines */}
-                      {[0, 25, 50, 75, 100].map((y) => (
-                        <line
-                          key={y}
-                          x1="0"
-                          y1={y}
-                          x2="400"
-                          y2={y}
-                          stroke="#f0f0f0"
-                          strokeWidth="1"
-                        />
-                      ))}
-
-                      {/* Actual data area */}
-                      <path
-                        d="M0,80 L50,75 L100,70 L150,60 L200,50 L250,45 L300,40 L300,100 L0,100 Z"
-                        fill="url(#areaGradient)"
-                        className="opacity-0 animate-fade-in"
-                        style={{ animationDelay: '2s', animationFillMode: 'forwards' }}
-                      />
-
-                      {/* Actual data line */}
-                      <path
-                        d="M0,80 L50,75 L100,70 L150,60 L200,50 L250,45 L300,40"
-                        fill="none"
-                        stroke="#9747FF"
-                        strokeWidth="2"
-                        className="opacity-0 animate-fade-in"
-                        style={{ animationDelay: '2s', animationFillMode: 'forwards' }}
-                      />
-
-                      {/* Predicted data line (dashed) */}
-                      <path
-                        d="M0,80 L50,70 L100,75 L150,55 L200,50 L250,40 L300,40 L350,25 L400,0"
-                        fill="none"
-                        stroke="#3a36db"
-                        strokeWidth="2"
-                        strokeDasharray="4,4"
-                        className="opacity-0 animate-fade-in"
-                        style={{ animationDelay: '2.5s', animationFillMode: 'forwards' }}
-                      />
-
-                      {/* Today indicator */}
-                      <g className="opacity-0 animate-fade-in" style={{ animationDelay: '2.7s', animationFillMode: 'forwards' }}>
-                        <line
-                          x1="300"
-                          y1="0"
-                          x2="300"
-                          y2="100"
-                          stroke="#4b5563"
-                          strokeWidth="1"
-                          strokeDasharray="2,2"
-                        />
-                        <circle
-                          cx="300"
-                          cy="40"
-                          r="4"
-                          fill="#9747FF"
-                          stroke="white"
-                          strokeWidth="1.5"
-                        />
-                        <text
-                          x="320"
-                          y="10"
-                          textAnchor="middle"
-                          fill="#4b5563"
-                          fontSize="10"
-                          className="font-medium"
-                        >
-                          Today
-                        </text>
-                      </g>
-                    </svg>
-
-                    {/* Legend */}
-                    <div className="absolute bottom-0 left-0 right-0 flex justify-between text-xs text-gray-500 mt-2">
-                      <span>Mon</span>
-                      <span>Wed</span>
-                      <span>Fri</span>
-                      <span>Sun</span>
-                    </div>
-                  </div>
-
-                  {/* Metrics */}
-                  {/* <div className="flex justify-between items-center mt-4 text-sm">
-                    <div>
-                      <div className="text-gray-500">Current Usage</div>
-                      <div className="font-medium text-gray-900">142 orders/day</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-gray-500">Predicted Peak</div>
-                      <div className="font-medium text-emerald-600">+28%</div>
-                    </div>
-                  </div> */}
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Bottom CTA Section */}
-      <section id="waitlist-cta" className={`py-12 md:py-24 bg-playt-purple text-white px-4 sm:px-0`}>
-        <div className={`${containerClass} text-center`}>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold font-poppins mb-4">
-            Ready to Optimize Your Operations?
-          </h2>
-          <p className="text-base sm:text-lg opacity-90 mb-6 md:mb-8 max-w-xl mx-auto px-4 sm:px-0">
-            Join our waitlist to get early access and updates.
-          </p>
-          <div className="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-4 sm:p-6 rounded-lg">
-            <WaitlistForm />
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="bg-gray-800 text-gray-400 py-8 md:py-12">
-        <div className={containerClass}>
-          <div className="flex flex-col md:flex-row justify-between items-center text-center md:text-left space-y-6 md:space-y-0">
-            <div className="mb-6 md:mb-0">
-              <Link href="/" className="flex items-center justify-center md:justify-start">
-                <Image 
-                  src="/logo.png" 
-                  alt="Playt Logo Light" 
-                  width={90} 
-                  height={36} 
-                  className="filter brightness-0 invert opacity-75 w-16 md:w-[90px]"
-                />
-              </Link>
-              <p className="text-sm mt-2">&copy; {new Date().getFullYear()} Playt. All rights reserved.</p>
-            </div>
-            <div className="flex flex-wrap justify-center gap-4 sm:gap-6 mb-6 md:mb-0">
-              <Link href="mailto:team@playt.ai" className="hover:text-white transition-colors">Contact</Link>
-              <Link href="/team" className="hover:text-white transition-colors">Our Team</Link>
-              <Link href="/careers" className="hover:text-white transition-colors">Careers</Link>
-              <Link href="/privacy" className="hover:text-white transition-colors">Privacy</Link>
-              <Link href="/eula" className="hover:text-white transition-colors">EULA</Link>
-            </div>
-            <div className="flex space-x-5">
-              <a href="#" aria-label="Twitter" className="hover:text-playt-purple transition-colors"><FaTwitter className="w-5 h-5" /></a>
-              <a href="#" aria-label="LinkedIn" className="hover:text-playt-purple transition-colors"><FaLinkedinIn className="w-5 h-5" /></a>
-              <a href="#" aria-label="Facebook" className="hover:text-playt-purple transition-colors"><FaFacebookF className="w-5 h-5" /></a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <HeroSection />
+      <FeaturesSection />
+      <InventorySection />
+      <OrderingSection />
+      <VendorSection />
+      <CTASection />
+      <Footer />
     </main>
-  )
+  );
 }
 
+function HeroSection() {
+  return (
+    <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      {/* Background Elements */}
+      <div className="absolute inset-0 bg-gradient-to-br from-playt-purple-50/50 via-white to-playt-yellow-50/30" />
+
+      {/* Animated gradient orbs */}
+      <motion.div
+        className="absolute top-1/4 right-1/4 w-[500px] h-[500px] bg-playt-purple-200 rounded-full blur-3xl opacity-20"
+        animate={{ x: [0, 30, 0], y: [0, -20, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+      />
+      <motion.div
+        className="absolute bottom-1/4 left-1/4 w-[400px] h-[400px] bg-playt-yellow-200 rounded-full blur-3xl opacity-20"
+        animate={{ x: [0, -20, 0], y: [0, 30, 0] }}
+        transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+      />
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+          {/* Text Content */}
+          <div className="text-center lg:text-left">
+            <motion.h1
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-display-xl font-bold font-poppins text-gray-900 mb-6 leading-[1.1]"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Smart Inventory.{' '}
+              <br className="hidden sm:block" />
+              Seamless Supply Chain.{' '}
+              <br className="hidden sm:block" />
+              <span className="gradient-text">For Restaurants.</span>
+            </motion.h1>
+
+            <motion.p
+              className="text-lg sm:text-xl text-gray-600 mb-8 max-w-xl mx-auto lg:mx-0"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
+            >
+              Predict demand, automate ordering, and optimize your supply chain with AI-powered inventory management built for restaurants.
+            </motion.p>
+
+            <motion.div
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.a
+                href="https://calendly.com/team-playt/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-playt-purple text-white font-medium px-8 py-4 rounded-xl shadow-soft hover:shadow-soft-lg hover:bg-playt-purple-600 transition-all duration-200"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Book a Demo
+                <FaArrowRight className="w-4 h-4" />
+              </motion.a>
+              <motion.a
+                href="#features"
+                className="inline-flex items-center justify-center gap-2 bg-white text-gray-700 font-medium px-8 py-4 rounded-xl border border-gray-200 shadow-soft-sm hover:shadow-soft hover:border-gray-300 transition-all duration-200"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                Learn More
+              </motion.a>
+            </motion.div>
+          </div>
+
+          {/* Floating Mockups Composition */}
+          <div className="relative h-[420px] sm:h-[480px] lg:h-[580px]">
+            {/* Inventory Dashboard - primary card, top-right */}
+            <motion.div
+              className="absolute -top-2 right-[0%] w-[100%] lg:w-[95%] z-30 origin-top-right pointer-events-none"
+              initial={{ opacity: 0, y: 30, scale: 0.65, rotate: 0 }}
+              animate={{ opacity: 1, y: 0, scale: 0.75, rotate: -1.5 }}
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.div
+                animate={{ y: [0, -8, 0] }}
+                transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <div className="shadow-glow-purple rounded-2xl">
+                  <InventoryDashboardMockup />
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Build Orders - bottom-left, overlapping */}
+            <motion.div
+              className="absolute top-[0%] -left-[6%] w-[82%] z-20 origin-left pointer-events-none hidden lg:block"
+              initial={{ opacity: 0, y: 30, scale: 0.55, rotate: 0 }}
+              animate={{ opacity: 1, y: 0, scale: 0.65, rotate: 2.5 }}
+              transition={{ duration: 0.8, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.div
+                animate={{ y: [0, -6, 0] }}
+                transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <div className="rounded-2xl shadow-soft-xl">
+                  <BuildOrdersMockup />
+                </div>
+              </motion.div>
+            </motion.div>
+
+            {/* Vendor Orders - bottom-right
+            <motion.div
+              className="absolute top-[48%] -right-[4%] w-[74%] z-10 origin-right pointer-events-none hidden lg:block"
+              initial={{ opacity: 0, y: 30, scale: 0.5, rotate: 0 }}
+              animate={{ opacity: 1, y: 0, scale: 0.6, rotate: -2.5 }}
+              transition={{ duration: 0.8, delay: 0.75, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <motion.div
+                animate={{ y: [0, -10, 0] }}
+                transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }}
+              >
+                <div className="rounded-2xl shadow-soft-xl">
+                  <VendorChoiceMockup />
+                </div>
+              </motion.div>
+            </motion.div> */}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function FeaturesSection() {
+  const features = [
+    {
+      icon: FaChartLine,
+      title: 'Real-Time Tracking',
+      description: 'Monitor stock levels, expiration dates, and usage patterns across all your ingredients in one dashboard.',
+    },
+    {
+      icon: FaBrain,
+      title: 'AI-Powered Forecasting',
+      description: 'Predict demand based on sales history, seasonality, and trends to order the right amount every time.',
+    },
+    {
+      icon: FaBoxes,
+      title: 'Automated Ordering',
+      description: 'Generate optimized purchase orders automatically based on par levels and predicted demand.',
+    },
+    {
+      icon: FaTruck,
+      title: 'Vendor Management',
+      description: 'Compare vendors, track reliability, and optimize your supply chain for cost and efficiency.',
+    },
+  ];
+
+  return (
+    <section id="features" className="py-24 md:py-32 bg-gray-50">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <AnimatedSection className="text-center max-w-3xl mx-auto mb-16">
+          <span className="inline-block px-4 py-2 rounded-full bg-playt-purple-100 text-playt-purple-700 text-sm font-medium mb-4">
+            Features
+          </span>
+          <h2 className="text-3xl sm:text-4xl md:text-display-md font-bold font-poppins text-gray-900 mb-4">
+            Everything you need to manage inventory smarter
+          </h2>
+          <p className="text-lg text-gray-600">
+            Stop guessing. Start optimizing your supply chain with intelligent tools built for restaurants.
+          </p>
+        </AnimatedSection>
+
+        <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-4 gap-6" staggerDelay={0.1}>
+          {features.map((feature, index) => (
+            <StaggerItem key={index}>
+              <motion.div
+                className="bg-white rounded-2xl p-6 shadow-soft hover:shadow-soft-lg transition-all duration-300 h-full"
+                whileHover={{ y: -8 }}
+              >
+                <div className="w-12 h-12 rounded-xl bg-playt-purple-100 flex items-center justify-center mb-5">
+                  <feature.icon className="w-6 h-6 text-playt-purple" />
+                </div>
+                <h3 className="text-lg font-semibold font-poppins text-gray-900 mb-2">
+                  {feature.title}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {feature.description}
+                </p>
+              </motion.div>
+            </StaggerItem>
+          ))}
+        </StaggerChildren>
+      </div>
+    </section>
+  );
+}
+
+function InventorySection() {
+  return (
+    <section className="py-24 md:py-32 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <AnimatedSection direction="left">
+            <span className="inline-block px-4 py-2 rounded-full bg-playt-purple-100 text-playt-purple-700 text-sm font-medium mb-6">
+              Inventory Dashboard
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-display-md font-bold font-poppins text-gray-900 mb-6 leading-tight">
+              See everything.<br />
+              Miss nothing.<br />
+              <span className="gradient-text">Stay in control.</span>
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Get real-time visibility into your entire inventory. Track stock levels, monitor expiration dates, and receive alerts before you run out.
+            </p>
+            <ul className="space-y-4">
+              {['Real-time stock level monitoring', 'Expiration date tracking', 'Low stock alerts and notifications', 'Usage trend analysis'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-700">
+                  <span className="w-6 h-6 rounded-full bg-playt-purple-100 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-playt-purple" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </AnimatedSection>
+
+          <AnimatedSection direction="right" className="lg:pl-8">
+            <InventoryDashboardMockup />
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function OrderingSection() {
+  return (
+    <section className="py-24 md:py-32 bg-gray-50 overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <AnimatedSection direction="left" className="order-2 lg:order-1 lg:pr-8">
+            <BuildOrdersMockup />
+          </AnimatedSection>
+
+          <AnimatedSection direction="right" className="order-1 lg:order-2">
+            <span className="inline-block px-4 py-2 rounded-full bg-playt-yellow-100 text-playt-yellow-500 text-sm font-medium mb-6">
+              Smart Ordering
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-display-md font-bold font-poppins text-gray-900 mb-6 leading-tight">
+              AI builds your orders.<br />
+              You just approve.<br />
+              <span className="gradient-text-yellow">Save hours every week.</span>
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Our AI analyzes your sales patterns, current stock, and lead times to suggest exactly what you need to order and when.
+            </p>
+            <ul className="space-y-4">
+              {['AI-calculated order quantities', 'Par level optimization', 'Lead time aware suggestions', 'One-click order adjustments'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-700">
+                  <span className="w-6 h-6 rounded-full bg-playt-yellow-100 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-playt-yellow-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function VendorSection() {
+  return (
+    <section className="py-24 md:py-32 bg-white overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+          <AnimatedSection direction="left">
+            <span className="inline-block px-4 py-2 rounded-full bg-green-100 text-green-700 text-sm font-medium mb-6">
+              Vendor Management
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-display-md font-bold font-poppins text-gray-900 mb-6 leading-tight">
+              Compare vendors.<br />
+              Track reliability.<br />
+              <span className="text-green-600">Optimize costs.</span>
+            </h2>
+            <p className="text-lg text-gray-600 mb-8 leading-relaxed">
+              Manage all your vendor relationships in one place. Compare prices, track delivery performance, and send orders with one click.
+            </p>
+            <ul className="space-y-4">
+              {['Multi-vendor price comparison', 'Reliability and delivery tracking', 'Automated PO generation', 'Order history and analytics'].map((item, i) => (
+                <li key={i} className="flex items-center gap-3 text-gray-700">
+                  <span className="w-6 h-6 rounded-full bg-green-100 flex items-center justify-center flex-shrink-0">
+                    <svg className="w-4 h-4 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                    </svg>
+                  </span>
+                  {item}
+                </li>
+              ))}
+            </ul>
+          </AnimatedSection>
+
+          <AnimatedSection direction="right" className="lg:pl-8">
+            <VendorChoiceMockup />
+          </AnimatedSection>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function CTASection() {
+  return (
+    <section className="py-24 md:py-32 bg-gradient-to-br from-playt-purple to-playt-purple-700 relative overflow-hidden">
+      <div className="absolute inset-0 opacity-10">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white rounded-full blur-3xl translate-x-1/2 -translate-y-1/2" />
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-playt-yellow rounded-full blur-3xl -translate-x-1/2 translate-y-1/2" />
+      </div>
+
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <AnimatedSection className="text-center max-w-2xl mx-auto">
+          <h2 className="text-3xl sm:text-4xl md:text-display-md font-bold font-poppins text-white mb-4">
+            Ready to optimize your inventory?
+          </h2>
+          <p className="text-lg text-white/80 mb-10">
+            Join our waitlist to get early access and updates.
+          </p>
+
+          <div className="max-w-md mx-auto bg-white/10 backdrop-blur-sm p-6 rounded-2xl border border-white/20">
+            <WaitlistForm />
+          </div>
+
+          <p className="mt-6 text-sm text-white/60">
+            Free to join. No credit card required.
+          </p>
+        </AnimatedSection>
+      </div>
+    </section>
+  );
+}

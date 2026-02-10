@@ -12,35 +12,35 @@ const plans = [
   {
     name: 'Basic',
     description: 'Perfect for single-location restaurants getting started with inventory management.',
-    price: '$75',
+    price: '$50',
     period: '/ month',
     popular: false,
     features: [
-      'Connect your POS system seamlessly',
+      'Seamless POS integrations',
       'Real-time inventory tracking dashboard',
-      'AI-powered demand forecasting',
-      'Low stock alerts and notifications',
-      'Basic vendor management',
+      'Intelligent demand forecasting',
+      'AI-powered supply management',
+      'Optimized vendor comparisons',
     ],
     cta: 'Get Started',
     href: '/register',
   },
-  {
-    name: 'Pro',
-    description: 'Advanced AI ordering and multi-vendor optimization for growing restaurants.',
-    price: '$125',
-    period: '/ month',
-    popular: true,
-    features: [
-      'Everything in Basic, plus:',
-      'AI-generated purchase orders',
-      'Multi-vendor price comparison',
-      'Expiration date tracking',
-      'Priority support',
-    ],
-    cta: 'Get Started',
-    href: '/register',
-  },
+  // {
+  //   name: 'Pro',
+  //   description: 'Advanced AI ordering and multi-vendor optimization for growing restaurants.',
+  //   price: '$75',
+  //   period: '/ month',
+  //   popular: true,
+  //   features: [
+  //     'Everything in Basic, plus:',
+  //     'AI-generated purchase orders',
+  //     'Multi-vendor price comparison',
+  //     'Expiration date tracking',
+  //     'Priority support',
+  //   ],
+  //   cta: 'Get Started',
+  //   href: '/register',
+  // },
   {
     name: 'Enterprise',
     description: 'Centralized inventory management across all locations with advanced analytics.',
@@ -52,7 +52,7 @@ const plans = [
       'Cross-location stock transfers',
       'Advanced supply chain analytics',
       'Custom integrations',
-      'Dedicated account manager',
+      // 'Dedicated account manager',
     ],
     cta: 'Contact Sales',
     href: 'mailto:team@playt.ai',
@@ -84,15 +84,14 @@ export default function PricingPage() {
       {/* Pricing Cards */}
       <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <StaggerChildren className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto" staggerDelay={0.15}>
+          <StaggerChildren className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto" staggerDelay={0.15}>
             {plans.map((plan, index) => (
               <StaggerItem key={index}>
                 <motion.div
-                  className={`relative bg-white rounded-3xl p-8 h-full flex flex-col ${
-                    plan.popular
-                      ? 'shadow-soft-xl border-2 border-playt-purple ring-1 ring-playt-purple/10'
-                      : 'shadow-soft border border-gray-100'
-                  }`}
+                  className={`relative rounded-3xl p-8 h-full flex flex-col ${index === 0
+                    ? 'bg-gradient-to-br from-playt-purple-50 to-white shadow-soft border border-playt-purple-100'
+                    : 'bg-gradient-to-br from-playt-yellow-50 to-white shadow-soft border border-playt-yellow-200'
+                    }`}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
                 >
                   {/* Popular Badge */}
@@ -128,10 +127,9 @@ export default function PricingPage() {
                   <ul className="space-y-4 mb-8 flex-grow">
                     {plan.features.map((feature, i) => (
                       <li key={i} className="flex items-start gap-3">
-                        <span className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${
-                          plan.popular ? 'bg-playt-purple-100' : 'bg-gray-100'
-                        }`}>
-                          <FaCheck className={`w-3 h-3 ${plan.popular ? 'text-playt-purple' : 'text-gray-600'}`} />
+                        <span className={`w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5 ${index === 0 ? 'bg-playt-purple-100' : 'bg-playt-yellow-200'
+                          }`}>
+                          <FaCheck className={`w-3 h-3 ${index === 0 ? 'text-playt-purple' : 'text-playt-yellow-700'}`} />
                         </span>
                         <span className="text-gray-700 text-sm">{feature}</span>
                       </li>
@@ -145,11 +143,10 @@ export default function PricingPage() {
                   >
                     <Link
                       href={plan.href}
-                      className={`flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl font-medium transition-all duration-200 ${
-                        plan.popular
-                          ? 'bg-playt-purple text-white hover:bg-playt-purple-600 shadow-soft hover:shadow-soft-lg'
-                          : 'bg-gray-900 text-white hover:bg-gray-800 shadow-soft hover:shadow-soft-lg'
-                      }`}
+                      className={`flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl font-medium transition-all duration-200 ${index === 0
+                        ? 'bg-playt-purple text-white hover:bg-playt-purple-600 shadow-soft hover:shadow-soft-lg'
+                        : 'bg-gray-900 text-white hover:bg-gray-800 shadow-soft hover:shadow-soft-lg'
+                        }`}
                     >
                       {plan.cta}
                       <FaArrowRight className="w-4 h-4" />

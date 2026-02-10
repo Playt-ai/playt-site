@@ -48,8 +48,9 @@ const plans = [
     period: '',
     popular: false,
     features: [
+      'Everything from Basic, plus:',
       'Centralized inventory for all locations',
-      'Cross-location stock transfers',
+      'Cross-location supply management',
       'Advanced supply chain analytics',
       'Custom integrations',
       // 'Dedicated account manager',

@@ -114,7 +114,7 @@ export default function EULA() {
             <section>
               <h2 className="text-xl font-semibold text-gray-900 mb-2">12. Contact</h2>
               <p>
-                Questions about this EULA? Contact us at <a href="mailto:support@playt.ai" className="text-playt-purple hover:underline">support@playt.ai</a>.
+                Questions about this EULA? Contact us at <a href="mailto:team@playt.ai" className="text-playt-purple hover:underline">team@playt.ai</a>.
               </p>
             </section>
           </div>

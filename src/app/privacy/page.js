@@ -35,7 +35,7 @@ export default function Privacy() {
             </p>
             <h2 className="text-2xl md:text-3xl font-bold font-poppins text-gray-900 mt-12 mb-4">Contact Us</h2>
             <p className="text-lg text-gray-600">
-              If you have any questions about this Privacy Policy, please contact us at team@playt.ai.
+              If you have any questions about this Privacy Policy, please contact us at <a href="mailto:team@playt.ai" className="text-playt-purple hover:underline">team@playt.ai</a>.
             </p>
           </div>
         </div>

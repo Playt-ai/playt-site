@@ -22,7 +22,7 @@ const team = [
     role: 'Co-Founder, CFO',
     image: '/team/jonathan.png',
     linkedin: 'https://www.linkedin.com/in/jonathan-jae1/',
-    description: 'Financial Mathematics @ Stanford',
+    description: 'Mathematics @ Stanford',
   },
   {
     name: 'Jackson Shen',
@@ -38,7 +38,7 @@ const values = [
     icon: FaLightbulb,
     title: 'Our Team',
     description:
-      "We bring engineering experience from companies like Microsoft, Amazon, and various startups to restaurant inventory management. With several papers published in machine learning and AI, we're ready to transform how restaurants manage their supply chain.",
+      "We bring engineering experience from Microsoft, Amazon, and various startups to restaurant inventory management. With several papers published in machine learning and AI, we're ready to transform how restaurants manage their supply.",
   },
   {
     icon: FaRocket,

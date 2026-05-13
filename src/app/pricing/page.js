@@ -1,7 +1,6 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Link from 'next/link';
 import Header from '../components/Header';
 import Footer from '../components/layout/Footer';
 import AnimatedSection from '../components/animations/AnimatedSection';
@@ -137,22 +136,6 @@ export default function PricingPage() {
                     ))}
                   </ul>
 
-                  {/* CTA Button */}
-                  <motion.div
-                    whileHover={{ scale: 1.02 }}
-                    whileTap={{ scale: 0.98 }}
-                  >
-                    <Link
-                      href={plan.href}
-                      className={`flex items-center justify-center gap-2 w-full py-4 px-6 rounded-xl font-medium transition-all duration-200 ${index === 0
-                        ? 'bg-playt-purple text-white hover:bg-playt-purple-600 shadow-soft hover:shadow-soft-lg'
-                        : 'bg-gray-900 text-white hover:bg-gray-800 shadow-soft hover:shadow-soft-lg'
-                        }`}
-                    >
-                      {plan.cta}
-                      <FaArrowRight className="w-4 h-4" />
-                    </Link>
-                  </motion.div>
                 </motion.div>
               </StaggerItem>
             ))}

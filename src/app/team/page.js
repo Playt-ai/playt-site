@@ -11,15 +11,8 @@ import { FaLinkedinIn, FaLightbulb, FaRocket, FaHeart, FaArrowRight } from 'reac
 
 const team = [
   {
-    name: 'Edison Shen',
-    role: 'Co-Founder, CEO',
-    image: '/team/edison.png',
-    linkedin: 'https://www.linkedin.com/in/edison-shen7/',
-    description: 'Computer Science @ Michigan',
-  },
-  {
     name: 'Jonathan Jae',
-    role: 'Co-Founder, CFO',
+    role: 'Co-Founder, CEO',
     image: '/team/jonathan.png',
     linkedin: 'https://www.linkedin.com/in/jonathan-jae1/',
     description: 'Mathematics @ Stanford',
@@ -115,7 +108,7 @@ export default function Team() {
             </p>
           </AnimatedSection>
 
-          <StaggerChildren className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto" staggerDelay={0.15}>
+          <StaggerChildren className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto" staggerDelay={0.15}>
             {team.map((member, index) => (
               <StaggerItem key={index}>
                 <motion.div

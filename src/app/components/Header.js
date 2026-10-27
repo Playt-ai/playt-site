@@ -16,6 +16,7 @@ export default function Header() {
   }, []);
 
   const navLinks = [
+    { href: '/get-started', label: 'Get Started' },
     { href: '/pricing', label: 'Pricing' },
     { href: '/team', label: 'About' },
     { href: '/careers', label: 'Careers' },

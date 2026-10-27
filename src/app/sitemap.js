@@ -10,6 +10,12 @@ export default function sitemap() {
       priority: 1,
     },
     {
+      url: `${baseUrl}/get-started`,
+      lastModified: currentDate,
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
       url: `${baseUrl}/team`,
       lastModified: currentDate,
       changeFrequency: 'monthly',

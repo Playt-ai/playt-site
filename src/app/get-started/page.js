@@ -113,11 +113,13 @@ export default function GetStartedPage() {
               Getting Started
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-display-lg font-bold font-poppins text-gray-900 mb-4">
-              Set up in an hour. Order in two minutes.
+              <span className="block">Set up in an hour.</span>
+              <span className="block">Order in two minutes.</span>
             </h1>
             <p className="text-lg text-gray-600">
-              Keep your vendors, your prices and how you pay them. We do the setup, and you never fill in a setup
-              screen.
+              Keep your vendors, your prices, and how you pay them. We forecast what you&apos;ll use, build each
+              order at the best prices across your vendors, send the purchase orders once you approve, and check every
+              invoice against them.
             </p>
           </AnimatedSection>
 

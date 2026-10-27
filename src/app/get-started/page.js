@@ -113,7 +113,7 @@ export default function GetStartedPage() {
               Getting Started
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-display-lg font-bold font-poppins text-gray-900 mb-4">
-              One hour to start. Two minutes a week.
+              Set up in an hour. Order in two minutes.
             </h1>
             <p className="text-lg text-gray-600">
               Keep your vendors, your prices and how you pay them. We do the setup, and you never fill in a setup

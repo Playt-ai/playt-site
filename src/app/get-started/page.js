@@ -22,9 +22,9 @@ const phases = [
         text: "We arrive with your menu and vendor list already drafted. You confirm them, tell us each vendor's delivery days and order cutoff, and sign a short agreement that lets Playt send orders in your restaurant's name.",
       },
       {
-        name: 'Share your Clover sales',
+        name: 'Share your POS sales',
         time: '5 min',
-        text: 'We read your sales and menu to learn what each dish uses. We never change anything in Clover.',
+        text: 'Clover, Toast or Square. We read your sales and menu to learn what each dish uses, and never change anything in your POS.',
       },
       {
         name: 'Forward your invoices',
@@ -77,14 +77,14 @@ const phases = [
 const unchanged = [
   'Your vendors and your reps',
   'Your negotiated prices and payment terms',
-  'Your Clover setup',
+  'Your POS setup',
   'Calling or texting a rep yourself whenever you want',
 ];
 
 const faqs = [
   {
     q: 'Which POS systems do you work with?',
-    a: "Clover today. If you're on another POS, book a call and tell us which one.",
+    a: "Clover, Toast and Square. If you're on another POS, book a call and tell us which one.",
   },
   {
     q: 'Do I have to switch vendors?',
@@ -113,7 +113,7 @@ export default function GetStartedPage() {
               Getting Started
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-display-lg font-bold font-poppins text-gray-900 mb-4">
-              Under an hour of your time, then about 2 minutes a week
+              Set up in an hour. Order in two minutes.
             </h1>
             <p className="text-lg text-gray-600">
               Keep your vendors, your prices and how you pay them. We do the setup, and you never fill in a setup

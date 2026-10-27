@@ -117,7 +117,8 @@ export default function GetStartedPage() {
               <span className="block">Order in two minutes.</span>
             </h1>
             <p className="text-lg text-gray-600">
-              Keep your vendors, your prices, and how you pay them. We make sure you don&apos;t run out or overpay.
+              <span className="block">Keep your vendors, your prices, and how you pay them.</span>
+              <span className="block">We make sure you&apos;re always stocked and get the best prices.</span>
             </p>
           </AnimatedSection>
 

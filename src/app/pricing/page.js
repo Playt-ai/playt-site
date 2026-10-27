@@ -166,7 +166,7 @@ export default function PricingPage() {
               },
               {
                 q: 'What POS systems do you integrate with?',
-                a: 'We integrate with most major POS systems including Square, Toast, Clover, and many more.',
+                a: "We work with Clover, Toast and Square. On something else? Tell us which one.",
               },
               {
                 q: 'How does the AI ordering work?',

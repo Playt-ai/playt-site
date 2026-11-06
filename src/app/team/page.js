@@ -7,43 +7,50 @@ import Header from '../components/Header';
 import Footer from '../components/layout/Footer';
 import AnimatedSection from '../components/animations/AnimatedSection';
 import StaggerChildren, { StaggerItem } from '../components/animations/StaggerChildren';
-import { FaLinkedinIn, FaLightbulb, FaRocket, FaHeart, FaArrowRight } from 'react-icons/fa';
+import { FaLinkedinIn, FaUserCheck, FaLock, FaHandshake, FaFileInvoiceDollar, FaArrowRight } from 'react-icons/fa';
 
+// Written for restaurant owners, not investors or recruiters: what Playt does
+// for them, and why it is safe to let us order. Only promise what the
+// Get Started page promises.
 const team = [
   {
     name: 'Jonathan Jae',
     role: 'Co-Founder, CEO',
     image: '/team/jonathan.png',
     linkedin: 'https://www.linkedin.com/in/jonathan-jae1/',
-    description: 'Mathematics @ Stanford',
   },
   {
     name: 'Jackson Shen',
     role: 'Co-Founder, CTO',
     image: '/team/jackson.png',
     linkedin: 'https://www.linkedin.com/in/jackson-shen/',
-    description: 'AI/ML Ph.D. @ Purdue',
   },
 ];
 
-const values = [
+const promises = [
   {
-    icon: FaLightbulb,
-    title: 'Our Team',
+    icon: FaUserCheck,
+    title: 'Nothing goes out without you',
     description:
-      "We bring engineering experience from Microsoft, Amazon, and various startups to restaurant inventory management. With several papers published in machine learning and AI, we're ready to transform how restaurants manage their supply.",
+      "You see every order before it's sent, and you can change or skip it. In your first weeks, someone at Playt also checks every order before it reaches you.",
   },
   {
-    icon: FaRocket,
-    title: 'Our Mission',
+    icon: FaLock,
+    title: 'We only read your POS',
     description:
-      "We believe your time is valuable and should be spent on cooking and improving the customer experience. That's why we're building seamless, plug-and-play AI solutions to predict demand, optimize inventory, and automate ordering for you.",
+      'We read your sales and menu to learn what each dish uses. We never change anything in your POS.',
   },
   {
-    icon: FaHeart,
-    title: 'Core Values',
+    icon: FaHandshake,
+    title: 'Your vendors, your prices',
     description:
-      "We believe in giving our customers the best experience possible. We're always looking to make our product better and we take into account every bit of feedback we get. Tell us about a new feature you'd like to see in the morning, and we'll have it in your app by the afternoon.",
+      'We order from the reps you already use, at the prices and terms you negotiated. Call or text them yourself whenever you want.',
+  },
+  {
+    icon: FaFileInvoiceDollar,
+    title: 'We catch billing mistakes',
+    description:
+      'Every invoice is checked against its order, and we flag overcharges and short deliveries so you only pay for what arrived.',
   },
 ];
 
@@ -60,36 +67,70 @@ export default function Team() {
               About Us
             </span>
             <h1 className="text-4xl sm:text-5xl md:text-display-lg font-bold font-poppins text-gray-900 mb-6">
-              Meet the team behind{' '}
-              <span className="gradient-text">Playt</span>
+              We handle the ordering.{' '}
+              <span className="gradient-text">You run the kitchen.</span>
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
-              We're a passionate team of engineers and data scientists on a mission to revolutionize restaurant inventory management with AI.
+              Playt gets the right food into your walk-in at the best price, without the late-night counts, the texts to three reps, or the guesswork.
             </p>
           </AnimatedSection>
         </div>
       </section>
 
-      {/* Values Section */}
-      <section className="py-16 md:py-24">
+      {/* Story Section */}
+      <section className="py-12 md:py-16">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <StaggerChildren className="grid md:grid-cols-3 gap-8" staggerDelay={0.15}>
-            {values.map((value, index) => (
-              <StaggerItem key={index}>
-                <motion.div
-                  className="bg-white rounded-2xl p-8 shadow-soft border border-gray-100 h-full hover:shadow-soft-lg transition-all duration-300"
-                  whileHover={{ y: -4 }}
-                >
-                  <div className="w-12 h-12 rounded-xl bg-playt-purple-100 flex items-center justify-center mb-6">
-                    <value.icon className="w-6 h-6 text-playt-purple" />
+          <AnimatedSection className="max-w-3xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-8 text-center">
+              Why we started Playt
+            </h2>
+            <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
+              <p>
+                Ordering eats hours every week. Count the walk-in, check what sold, text your reps, then hope the invoice matches. Order too much and food goes in the trash. Order too little and you run out on a Friday night. And food costs keep climbing.
+              </p>
+              <p>
+                We built Playt to take that job off your plate. Playt reads your sales, learns what each dish uses, and drafts your orders from the vendors you already buy from. You approve in a couple of minutes, and we handle the rest.
+              </p>
+            </div>
+            <div className="mt-10 rounded-3xl p-8 bg-gradient-to-br from-playt-yellow-50 to-white border border-playt-yellow-200 shadow-soft text-center">
+              <p className="text-sm font-medium text-gray-500 uppercase tracking-wide mb-2">Our mission</p>
+              <p className="text-2xl md:text-3xl font-bold font-poppins text-gray-900">
+                Lower food prices across the board.
+              </p>
+              <p className="text-gray-600 mt-3">
+                When restaurants buy smarter and waste less, they keep more of every dollar, and food gets cheaper for everyone.
+              </p>
+            </div>
+          </AnimatedSection>
+        </div>
+      </section>
+
+      {/* Promises Section */}
+      <section className="py-16 md:py-24 bg-gray-50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <AnimatedSection className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">
+              Safe to hand over the ordering
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Your restaurant depends on getting this right, so you stay in control the whole way.
+            </p>
+          </AnimatedSection>
+
+          <StaggerChildren className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto" staggerDelay={0.1}>
+            {promises.map((item) => (
+              <StaggerItem key={item.title}>
+                <div className="bg-white rounded-2xl p-8 shadow-soft border border-gray-100 h-full">
+                  <div className="w-12 h-12 rounded-xl bg-playt-purple-100 flex items-center justify-center mb-5">
+                    <item.icon className="w-6 h-6 text-playt-purple" />
                   </div>
-                  <h3 className="text-xl font-bold font-poppins text-gray-900 mb-3">
-                    {value.title}
+                  <h3 className="text-xl font-bold font-poppins text-gray-900 mb-2">
+                    {item.title}
                   </h3>
                   <p className="text-gray-600 leading-relaxed">
-                    {value.description}
+                    {item.description}
                   </p>
-                </motion.div>
+                </div>
               </StaggerItem>
             ))}
           </StaggerChildren>
@@ -97,14 +138,14 @@ export default function Team() {
       </section>
 
       {/* Team Section */}
-      <section className="py-16 md:py-24 bg-gray-50">
+      <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-poppins text-gray-900 mb-4">
-              Our People
+              Who you&apos;ll work with
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Building the future of restaurant inventory management, one innovation at a time.
+              Playt is run by its founders. When you email or call, you reach us directly. Ask for a change and we&apos;ll often ship it the same day.
             </p>
           </AnimatedSection>
 
@@ -131,6 +172,7 @@ export default function Team() {
                     {/* LinkedIn on Hover */}
                     <motion.a
                       href={member.linkedin}
+                      aria-label={`${member.name} on LinkedIn`}
                       target="_blank"
                       rel="noopener noreferrer"
                       className="absolute bottom-4 right-4 w-10 h-10 rounded-full bg-white flex items-center justify-center text-playt-purple opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-playt-purple hover:text-white"
@@ -146,8 +188,7 @@ export default function Team() {
                     <h3 className="text-xl font-bold font-poppins text-gray-900 mb-1">
                       {member.name}
                     </h3>
-                    <p className="text-playt-purple font-medium mb-2">{member.role}</p>
-                    <p className="text-gray-600 text-sm">{member.description}</p>
+                    <p className="text-playt-purple font-medium">{member.role}</p>
                   </div>
                 </motion.div>
               </StaggerItem>
@@ -156,28 +197,35 @@ export default function Team() {
         </div>
       </section>
 
-      {/* Join Us CTA */}
+      {/* CTA */}
       <section className="py-16 md:py-24 bg-gradient-to-br from-playt-purple to-playt-purple-700">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <AnimatedSection className="text-center max-w-2xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold font-poppins text-white mb-4">
-              Join our team
+              See what Playt would order for you
             </h2>
             <p className="text-white/80 mb-8">
-              We're always looking for talented people to help us build the future of restaurant inventory management.
+              Book a 20-minute call. Tell us your restaurant&apos;s name and we&apos;ll bring your menu and vendor list, already drafted.
             </p>
-            <motion.div
-              whileHover={{ scale: 1.02, y: -2 }}
-              whileTap={{ scale: 0.98 }}
-            >
-              <Link
-                href="/careers"
-                className="inline-flex items-center gap-2 bg-white text-playt-purple font-medium px-8 py-4 rounded-xl shadow-soft-lg hover:shadow-soft-2xl transition-all duration-200"
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <motion.a
+                href="https://calendly.com/team-playt/30min"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center gap-2 bg-white text-playt-purple font-medium px-8 py-4 rounded-xl shadow-soft-lg hover:shadow-soft-2xl transition-all duration-200"
+                whileHover={{ scale: 1.02, y: -2 }}
+                whileTap={{ scale: 0.98 }}
               >
-                View Open Positions
+                Book a Call
                 <FaArrowRight className="w-4 h-4" />
+              </motion.a>
+              <Link
+                href="/get-started"
+                className="inline-flex items-center justify-center gap-2 text-white font-medium px-8 py-4 rounded-xl border border-white/40 hover:bg-white/10 transition-all duration-200"
+              >
+                How setup works
               </Link>
-            </motion.div>
+            </div>
           </AnimatedSection>
         </div>
       </section>

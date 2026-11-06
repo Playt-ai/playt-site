@@ -86,7 +86,7 @@ export default function Team() {
             </h2>
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                Jonathan and Jackson, Playt&apos;s founders, grew up working in restaurants. We saw the same problems week after week: hours lost to counting the walk-in, texting reps, and hoping the invoice matched. Order too much and food went in the trash. Order too little and the kitchen ran out on a Friday night.
+                Jonathan and Jackson, Playt&apos;s founders, worked in restaurants through high school and college. We saw the same problems week after week: hours lost to counting the walk-in, texting reps, and hoping the invoice matched. Order too much and food went in the trash. Order too little and the kitchen ran out on a Friday night.
               </p>
               <p>
                 We knew these were problems we could fix, so we built Playt to take that job off your plate. Playt reads your sales, learns what each dish uses, and drafts your orders from the vendors you already buy from. You approve in a couple of minutes, and we handle the rest.

@@ -86,10 +86,10 @@ export default function Team() {
             </h2>
             <div className="space-y-6 text-lg text-gray-600 leading-relaxed">
               <p>
-                Ordering eats hours every week. Count the walk-in, check what sold, text your reps, then hope the invoice matches. Order too much and food goes in the trash. Order too little and you run out on a Friday night. And food costs keep climbing.
+                Jonathan and Jackson, Playt&apos;s founders, grew up working in restaurants. We saw the same problems week after week: hours lost to counting the walk-in, texting reps, and hoping the invoice matched. Order too much and food went in the trash. Order too little and the kitchen ran out on a Friday night.
               </p>
               <p>
-                We built Playt to take that job off your plate. Playt reads your sales, learns what each dish uses, and drafts your orders from the vendors you already buy from. You approve in a couple of minutes, and we handle the rest.
+                We knew these were problems we could fix, so we built Playt to take that job off your plate. Playt reads your sales, learns what each dish uses, and drafts your orders from the vendors you already buy from. You approve in a couple of minutes, and we handle the rest.
               </p>
             </div>
             <div className="mt-10 rounded-3xl p-8 bg-gradient-to-br from-playt-yellow-50 to-white border border-playt-yellow-200 shadow-soft text-center">

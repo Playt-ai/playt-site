@@ -17,15 +17,15 @@ const poppins = Poppins({
 export const metadata = {
   metadataBase: new URL('https://playt.ai'),
   title: {
-    default: 'Playt | Restaurant Analytics and Operations Platform',
+    default: 'Playt | Restaurant Ordering, Done For You',
     template: '%s | Playt'
   },
-  description: "Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.",
-  keywords: ['restaurant analytics', 'restaurant operations', 'restaurant management', 'restaurant data', 'restaurant technology', 'restaurant software'],
+  description: "Playt writes your vendor orders from your Toast, Square or Clover sales. Approve in two minutes from your phone. Keep your vendors and your prices.",
+  keywords: ['restaurant ordering', 'restaurant inventory', 'food cost', 'vendor ordering', 'purchase orders', 'Toast', 'Square', 'Clover'],
   authors: [{ name: 'Playt' }],
   openGraph: {
-    title: 'Playt | Restaurant Analytics and Operations Platform',
-    description: "Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.",
+    title: 'Playt | Restaurant Ordering, Done For You',
+    description: "Playt writes your vendor orders from your Toast, Square or Clover sales. Approve in two minutes from your phone. Keep your vendors and your prices.",
     url: 'https://playt.ai',
     siteName: 'Playt',
     images: [
@@ -41,8 +41,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Playt | Restaurant Analytics and Operations Platform',
-    description: "Smarter data and smoother operations for restaurants. Playt helps restaurants optimize their operations with predictive analytics and intelligent insights.",
+    title: 'Playt | Restaurant Ordering, Done For You',
+    description: "Playt writes your vendor orders from your Toast, Square or Clover sales. Approve in two minutes from your phone. Keep your vendors and your prices.",
     images: ['/og-image.png'],
   },
   icons: {

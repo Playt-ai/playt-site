@@ -8,7 +8,7 @@ import { FaTwitter, FaLinkedinIn, FaFacebookF } from 'react-icons/fa';
 export default function Footer() {
   const footerLinks = [
     { href: 'mailto:team@playt.ai', label: 'Contact' },
-    { href: '/team', label: 'Our Team' },
+    { href: '/team', label: 'About' },
     { href: '/careers', label: 'Careers' },
     { href: '/privacy', label: 'Privacy' },
     { href: '/eula', label: 'EULA' },

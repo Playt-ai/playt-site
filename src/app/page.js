@@ -51,16 +51,16 @@ function HeroSection() {
           {/* Text Content */}
           <div className="text-center lg:text-left">
             <motion.h1
-              className="text-4xl sm:text-5xl md:text-6xl lg:text-display-xl font-bold font-poppins text-gray-900 mb-6 leading-[1.1]"
+              className="text-4xl sm:text-5xl md:text-6xl lg:text-[3.125rem] xl:text-display-xl font-bold font-poppins text-gray-900 mb-6 leading-[1.1]"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
             >
-              Smart Inventory.{' '}
-              <br className="hidden sm:block" />
-              Seamless Supply Chain.{' '}
-              <br className="hidden sm:block" />
-              <span className="gradient-text">For Restaurants.</span>
+              {/* Keep each line about as wide as "Smart Inventory." so it fits the
+                  half-width hero column on one line (lg is 1024px wide). */}
+              <span className="block">Smart Inventory.</span>
+              <span className="block">Better Prices.</span>
+              <span className="block gradient-text">For Restaurants.</span>
             </motion.h1>
 
             <motion.p

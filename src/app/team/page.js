@@ -71,7 +71,7 @@ export default function Team() {
               <span className="gradient-text">You run the kitchen.</span>
             </h1>
             <p className="text-lg text-gray-600 leading-relaxed">
-              Playt gets the right food into your walk-in at the best price, without the late-night counts, the texts to three reps, or the guesswork.
+              Always stocked, at the best prices, in two minutes a week.
             </p>
           </AnimatedSection>
         </div>
@@ -145,7 +145,7 @@ export default function Team() {
               Who you&apos;ll work with
             </h2>
             <p className="text-gray-600 max-w-2xl mx-auto">
-              Playt is run by its founders. When you email or call, you reach us directly. Ask for a change and we&apos;ll often ship it the same day.
+              Playt is run by its founders. When you email or call, you reach us directly. Ask for a change and we&apos;ll ship it the same day.
             </p>
           </AnimatedSection>
 
